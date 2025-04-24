@@ -202,7 +202,10 @@ for i,v in next, GameData.Story do
     }
     GameData.Dropdowns.Image.Story[v.Name] = {
         Color = true,
+        SizeY = 40,
         Image = v.Image,
+        UICorner = 4,
+        ScaleType = Enum.ScaleType.Stretch,
         BackgroundTransparency = 1
     }
 end
