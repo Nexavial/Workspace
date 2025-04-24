@@ -183,7 +183,7 @@ function GameData:ConvertWorld(t, n, g)
 end
 for i,v in next, GameData.Story do
     GameData.Dropdowns.Story[v.Name] = {
-        Type = "Dropdown",
+        Type = {"Dropdown", "Dropdown2"},
         List = {
             "Chapter 1",
             "Chapter 2",
@@ -196,8 +196,15 @@ for i,v in next, GameData.Story do
             "Chapter 9",
             "Chapter 10"
         },
+        List2 = {
+            "Normal",
+            "Hard",
+            "Nightmare"
+        },
         DropdownTitle = "Select Chapter",
+		DropdownTitle2 = "Select Difficulty",
         DefaultDropdown = "Chapter 1",
+        DefaultDropdown2 = "Normal",
         LayoutOrder = v.LayoutOrder
     }
     GameData.Dropdowns.Image.Story[v.Name] = {
