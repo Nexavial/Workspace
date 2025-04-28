@@ -15,7 +15,7 @@ local EId = {
 		["High Frost"] = "WElf2",
 		["Laruda"] = "WBoss",
 		["Metal"] = "WIron",
-		["Sillad"] = "WBoss2",
+		["Snow"] = "WBoss2",
         ["Vermillion"] = "Igris",
         ["Monarch"] = "JinWoo",
         ["Wesil"] = "Esil",
@@ -2240,7 +2240,7 @@ function Data:ReturnWorld(x)
     return k
 end
 for i,v in next, Pet do
-	Data.EnemyId.Name[v.Name] = i
+	Data.EnemyId.Name[i] = v.Name
 end
 for i,v in next, Data:ReturnWorld() do
 	Data.WorldDungeon[v] = {
