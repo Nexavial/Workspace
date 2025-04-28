@@ -1,53 +1,5 @@
 local EId = {
-    Name = {
-        ["Dongsoo"] = "Soondoo",
-        ["Gunhee "] = "Gonshee",
-        ["Baek"] = "Daek",
-        ["JongIn"] = "LongIn",
-        ["Andre"] = "Anders",
-        ["Kargalgan"] = "Largalgan",
-        ["RedAnt"] = "Ant Soldier",
-        ["AntQueen"]  = "Ant Queen",
-        ["Beru"] = "Ziru",--Ant King
-        ["Igris"] = "Vermillion",
-        ["JinWoo"] = "Monarch",
-        ["Esil"] = "Wesil",
-        ["Vulcan"] = "Magma",
-        ["Metus"] = "Litch",
-        ["Baran"] = "White Flame",
-        ["Orochimaru"] = "Snake Man",
-        ["Sakura"] = "Blossom",
-        ["Itachi"] = "Black Crow",
-        ["Pain"] = "Dor",
-        ["Arlong"] = "Shark Man",
-        ["Enel"] = "Eminel",
-        ["Kizaru"] = "Light Admiral",
-        ["Mihalk"] = "Mifalcon",
-        ["Uryu"] = "Luryu",
-        ["Byakuya"] = "Fyakuya",
-        ["Renji"] = "Genji",
-        ["Ulquiorra"] = "Murcielago",
-        ["Luck"] = "Sortudo",
-        ["Noelle"] = "Michille",
-        ["Yuno"] = "Wind",
-        ["Julius"] = "Time King",
-        ["Angel"] = "Heaven",
-        ["Reze"] = "Zere",
-        ["Aki"] = "Ika",
-        ["Denji"] = "Chainsaw",
-        ["Diavolo"] = "Diablo",
-        ["Josuke"] = "Gosuke",
-        ["Jolyne"] = "Golyne",
-        ["Pucci"] = "Gucci",
-        ["Kame"] = "Turtle",
-        ["Piccolo"] = "Green",
-        ["Cell"] = "Sky",
-        ["Freeza"] = "Frioo",
-		["Genos"] = "Cyborg",
-		["Tornado"] = "Hurricane",
-		["Mumem"] = "Rider",
-		["Saitama"] = "Paitama"
-    },
+    Name = {},
     Default = {
         ["Soondoo"] = "SL1",
         ["Gonshee"] = "SL2",
@@ -59,6 +11,11 @@ local EId = {
         ["Ant Queen"] = "JJ3",
         ["Ant King"] = "JJ4",
         ["Ziru"] = "JJ4",
+		["Elf Soldier"] = "WElf1",
+		["High Frost"] = "WElf2",
+		["Laruda"] = "WBoss",
+		["Metal"] = "WIron",
+		["Sillad"] = "WBoss2",
         ["Vermillion"] = "Igris",
         ["Monarch"] = "JinWoo",
         ["Wesil"] = "Esil",
@@ -297,8 +254,8 @@ local Pet = {
 		Image = "rbxassetid://77293116688131";
 		ImageOff = "rbxassetid://140170434516013";
 		Area = 1;
-		HitDMG = 650;
-		UltDMG = 4500;
+		HitDMG = 1000;
+		UltDMG = 6000;
 		HitsToUlt = 6;
 		UltTicks = 6;
 		TickDelay = 0.2;
@@ -325,8 +282,8 @@ local Pet = {
 		Image = "rbxassetid://89465342794996";
 		ImageOff = "rbxassetid://118847381073243";
 		Area = 1;
-		HitDMG = 1560;
-		UltDMG = 9000;
+		HitDMG = 1760;
+		UltDMG = 9900;
 		HitsToUlt = 6;
 		UltTicks = 1;
 		TickDelay = 1;
@@ -392,6 +349,72 @@ local Pet = {
 		HitsToUlt = 7;
 		UltTicks = 4;
 		TickDelay = 0.3;
+	};
+	Elf1 = {
+		Name = "Elf Soldier";
+		Rarity = "Uncommon";
+		Image = "rbxassetid://71398415599726";
+		ImageOff = "rbxassetid://73601284281821";
+		Area = 1;
+		HitDMG = 647;
+		UltDMG = 3235;
+		HitsToUlt = 7;
+		UltTicks = 6;
+		TickDelay = 0.15;
+		AnimationType = "DualDagger";
+		HaveWeapon = true;
+	};
+	Elf2 = {
+		Name = "High Frost";
+		Rarity = "Uncommon";
+		Image = "rbxassetid://129012742050665";
+		ImageOff = "rbxassetid://101825938374211";
+		Area = 1;
+		HitDMG = 785;
+		UltDMG = 4125;
+		HitsToUlt = 7;
+		UltTicks = 15;
+		TickDelay = 0.15;
+	};
+	Baraka = {
+		Name = "Laruda";
+		Rarity = "Legendary";
+		Image = "rbxassetid://81773124242565";
+		ImageOff = "rbxassetid://116729163496819";
+		Area = 1;
+		HitDMG = 1525;
+		UltDMG = 9100;
+		HitsToUlt = 7;
+		UltTicks = 2;
+		TickDelay = 0.55;
+		AnimationType = "WeaponLeft";
+		HaveWeapon = true;
+	};
+	Tank = {
+		Name = "Metal";
+		Rarity = "Legendary";
+		Image = "rbxassetid://119677113010035";
+		ImageOff = "rbxassetid://95146234875917";
+		Area = 1;
+		HitDMG = 1425;
+		UltDMG = 8900;
+		HitsToUlt = 7;
+		UltTicks = 2;
+		TickDelay = 0.7;
+		AnimationType = "WeaponRight";
+		HaveWeapon = true;
+	};
+	Sillad = {
+		Name = "Snow";
+		Rarity = "Mythical";
+		Image = "rbxassetid://73726122670637";
+		ImageOff = "rbxassetid://71640279965149";
+		Area = 1;
+		HitDMG = 1800;
+		UltDMG = 10000;
+		HitsToUlt = 7;
+		UltTicks = 11;
+		TickDelay = 0.2;
 	};
 	Orochimaru = {
 		Name = "Snake Man";
@@ -970,14 +993,26 @@ local Pet = {
 		UltTicks = 1;
 		TickDelay = 0.55;
 	};
+	Mumem = {
+		Name = "Rider";
+		Rarity = "Common";
+		Image = "rbxassetid://128378128442053";
+		ImageOff = "rbxassetid://74253859300828";
+		Area = 9;
+		HitDMG = 984;
+		UltDMG = 5120;
+		HitsToUlt = 7;
+		UltTicks = 13;
+		TickDelay = 0.3;
+	};
 	Genos = {
 		Name = "Cyborg";
 		Rarity = "Common";
 		Image = "rbxassetid://79766928858773";
 		ImageOff = "rbxassetid://106347033503080";
 		Area = 9;
-		HitDMG = 984;
-		UltDMG = 5120;
+		HitDMG = 1084;
+		UltDMG = 5520;
 		HitsToUlt = 7;
 		UltTicks = 10;
 		TickDelay = 0.35;
@@ -988,23 +1023,11 @@ local Pet = {
 		Image = "rbxassetid://126138839369014";
 		ImageOff = "rbxassetid://89583618342846";
 		Area = 9;
-		HitDMG = 1084;
-		UltDMG = 5520;
-		HitsToUlt = 7;
-		UltTicks = 5;
-		TickDelay = 0.5;
-	};
-	Mumem = {
-		Name = "Rider";
-		Rarity = "Common";
-		Image = "rbxassetid://128378128442053";
-		ImageOff = "rbxassetid://74253859300828";
-		Area = 9;
 		HitDMG = 1185;
 		UltDMG = 6080;
 		HitsToUlt = 7;
-		UltTicks = 13;
-		TickDelay = 0.3;
+		UltTicks = 5;
+		TickDelay = 0.5;
 	};
 	Saitama = {
 		Name = "Paitama";
@@ -1375,6 +1398,72 @@ local Info = {
 		HitsToUlt = 7;
 		UltTicks = 4;
 		TickDelay = 0.3;
+	};
+	{
+		Name = "Elf Soldier";
+		Rarity = "Uncommon";
+		Image = "rbxassetid://71398415599726";
+		ImageOff = "rbxassetid://73601284281821";
+		Area = 1;
+		HitDMG = 647;
+		UltDMG = 3235;
+		HitsToUlt = 7;
+		UltTicks = 6;
+		TickDelay = 0.15;
+		AnimationType = "DualDagger";
+		HaveWeapon = true;
+	};
+	{
+		Name = "High Frost";
+		Rarity = "Uncommon";
+		Image = "rbxassetid://129012742050665";
+		ImageOff = "rbxassetid://101825938374211";
+		Area = 1;
+		HitDMG = 785;
+		UltDMG = 4125;
+		HitsToUlt = 7;
+		UltTicks = 15;
+		TickDelay = 0.15;
+	};
+	{
+		Name = "Laruda";
+		Rarity = "Legendary";
+		Image = "rbxassetid://81773124242565";
+		ImageOff = "rbxassetid://116729163496819";
+		Area = 1;
+		HitDMG = 1525;
+		UltDMG = 9100;
+		HitsToUlt = 7;
+		UltTicks = 2;
+		TickDelay = 0.55;
+		AnimationType = "WeaponLeft";
+		HaveWeapon = true;
+	};
+	{
+		Name = "Metal";
+		Rarity = "Legendary";
+		Image = "rbxassetid://119677113010035";
+		ImageOff = "rbxassetid://95146234875917";
+		Area = 1;
+		HitDMG = 1425;
+		UltDMG = 8900;
+		HitsToUlt = 7;
+		UltTicks = 2;
+		TickDelay = 0.7;
+		AnimationType = "WeaponRight";
+		HaveWeapon = true;
+	};
+	{
+		Name = "Snow";
+		Rarity = "Mythical";
+		Image = "rbxassetid://73726122670637";
+		ImageOff = "rbxassetid://71640279965149";
+		Area = 1;
+		HitDMG = 1800;
+		UltDMG = 10000;
+		HitsToUlt = 7;
+		UltTicks = 11;
+		TickDelay = 0.2;
 	};
 	{
 		Name = "Snake Man";
@@ -2149,6 +2238,9 @@ function Data:ReturnWorld(x)
         end
     end
     return k
+end
+for i,v in next, Pet do
+	Data.EnemyId.Name[v.Name] = i
 end
 for i,v in next, Data:ReturnWorld() do
 	Data.WorldDungeon[v] = {
