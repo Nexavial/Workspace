@@ -222,7 +222,7 @@ function GameData:AddImageList(p, x, y)
                 "Ranger Stage 3"
             },
             Multi = true,
-            DropdownTitle = "Select Chapter",
+            DropdownTitle = "Select Ranger Stage",
             DefaultDropdown = {
                 "Ranger Stage 1",
                 "Ranger Stage 2",
