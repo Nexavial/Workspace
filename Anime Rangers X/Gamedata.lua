@@ -165,10 +165,11 @@ local GameData = {
         };
     },
     Dropdowns = {
-        Story = {},
         Image = {
             Story = {}
-        }
+        },
+        Story = {},
+        Ranger = {}
     }
 }
 GameData.__index = GameData
@@ -211,6 +212,22 @@ function GameData:AddImageList(p, x, y)
             DropdownTitle2 = "Select Difficulty",
             DefaultDropdown = "Chapter 1",
             DefaultDropdown2 = "Normal",
+            LayoutOrder = v.LayoutOrder
+        }
+        GameData.Dropdowns.Ranger[v.Name] = {
+            Type = "Dropdown",
+            List = {
+                "Ranger Stage 1",
+                "Ranger Stage 2",
+                "Ranger Stage 3"
+            },
+            Multi = true,
+            DropdownTitle = "Select Chapter",
+            DefaultDropdown = {
+                "Ranger Stage 1",
+                "Ranger Stage 2",
+                "Ranger Stage 3"
+            },
             LayoutOrder = v.LayoutOrder
         }
         GameData.Dropdowns.Image.Story[v.Name] = {
