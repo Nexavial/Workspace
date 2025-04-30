@@ -175,7 +175,7 @@ GameData.__index = GameData
 function GameData:ConvertWorld(t, n, g)
     if t == "Story" then
         for i,v in next, GameData.Story do
-            if v.Name == n or "" then
+            if v.Name == n then
                 return g and GameData.Story[i] or i
             end
         end
