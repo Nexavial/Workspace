@@ -181,37 +181,44 @@ function GameData:ConvertWorld(t, n, g)
         end
     end
 end
-for i,v in next, GameData.Story do
-    GameData.Dropdowns.Story[v.Name] = {
-        Type = {"Dropdown", "Dropdown2"},
-        List = {
-            "Chapter 1",
-            "Chapter 2",
-            "Chapter 3",
-            "Chapter 4",
-            "Chapter 5",
-            "Chapter 6",
-            "Chapter 7",
-            "Chapter 8",
-            "Chapter 9",
-            "Chapter 10"
-        },
-        List2 = {
-            "Normal",
-            "Hard",
-            "Nightmare"
-        },
-        DropdownTitle = "Select Chapter",
-		DropdownTitle2 = "Select Difficulty",
-        DefaultDropdown = "Chapter 1",
-        DefaultDropdown2 = "Normal",
-        LayoutOrder = v.LayoutOrder
-    }
-    GameData.Dropdowns.Image.Story[v.Name] = {
-        Color = true,
-        MaxWidthXYSize = 170,
-        Image = v.Image,
-        BackgroundTransparency = 1
-    }
+function GameData:AdjustYSizeOffset(p, x, y)
+    local i = x / y
+	local v = p.AbsoluteSize.X
+	return v / i
+end
+function GameData:AddImageList(p, x, y)
+    for i,v in next, GameData.Story do
+        GameData.Dropdowns.Story[v.Name] = {
+            Type = {"Dropdown", "Dropdown2"},
+            List = {
+                "Chapter 1",
+                "Chapter 2",
+                "Chapter 3",
+                "Chapter 4",
+                "Chapter 5",
+                "Chapter 6",
+                "Chapter 7",
+                "Chapter 8",
+                "Chapter 9",
+                "Chapter 10"
+            },
+            List2 = {
+                "Normal",
+                "Hard",
+                "Nightmare"
+            },
+            DropdownTitle = "Select Chapter",
+            DropdownTitle2 = "Select Difficulty",
+            DefaultDropdown = "Chapter 1",
+            DefaultDropdown2 = "Normal",
+            LayoutOrder = v.LayoutOrder
+        }
+        GameData.Dropdowns.Image.Story[v.Name] = {
+            Color = true,
+            MaxWidthXYSize = GameData:AdjustYSizeOffset(p, x, y),
+            Image = v.Image,
+            BackgroundTransparency = 1
+        }
+    end
 end
 return GameData
