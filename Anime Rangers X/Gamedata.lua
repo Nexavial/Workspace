@@ -182,7 +182,7 @@ local GameData = {
     },
     LevelRequirements = {
         --//OnePiece
-        OnePiece_Chapter1 = nil,
+        OnePiece_Chapter1 = true,
         OnePiece_Chapter2 = "OnePiece_Chapter1",
         OnePiece_Chapter3 = "OnePiece_Chapter2",
         OnePiece_Chapter4 = "OnePiece_Chapter3",
@@ -192,7 +192,7 @@ local GameData = {
         OnePiece_Chapter8 = "OnePiece_Chapter7",
         OnePiece_Chapter9 = "OnePiece_Chapter8",
         OnePiece_Chapter10 = "OnePiece_Chapter9",
-        OnePiece_RangerStage1 = nil,
+        OnePiece_RangerStage1 = true,
         OnePiece_RangerStage2 = "OnePiece_Chapter10",
         OnePiece_RangerStage3 = "OnePiece_Chapter10",
         --//Namek
