@@ -181,15 +181,17 @@ local GameData = {
         "Expensive Upgrades"
     }
 }
+local H = {
+    {},
+    {}
+}
 GameData.__index = GameData
-function GameData:ConvertWorld(t, n, g)
-    if t == "Story" then
-        for i,v in next, GameData.Story do
-            if v.Name == n then
-                return g and GameData.Story[i] or i
-            end
-        end
-    end
+for i,v in next, GameData.Story do
+    H[2][i] = v.Name
+    H[1][v.Name] = i
+end
+function GameData:ConvertWorld(n)
+    return H[1][n] or H[2][n] or nil
 end
 function GameData:AdjustYSizeOffset(p, x, y)
     local i = x / y
