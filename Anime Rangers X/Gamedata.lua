@@ -100,7 +100,7 @@ local GameData = {
         Naruto = {
             LayoutOrder = 4;
             Name = "Leaf Village";
-            Image = "rbxassetid://115842135671395";
+            Image = "rbxassetid://93900824627541";
             BossShow = "Naruto_Mon_Boss1";
             StoryAble = true;
             Ani_Names = "Naruto";
@@ -169,7 +169,16 @@ local GameData = {
             Story = {}
         },
         Story = {},
-        Ranger = {}
+        Ranger = {},
+        Challenge = {}
+    },
+    ChallengeList = {
+        "High Cost",
+        "Speed Demon",
+        "Budget Cuts",
+        "One Life Only",
+        "Limited Towers",
+        "Expensive Upgrades"
     }
 }
 GameData.__index = GameData
@@ -228,6 +237,13 @@ function GameData:AddImageList(p, x, y)
                 "Ranger Stage 2",
                 "Ranger Stage 3"
             },
+            LayoutOrder = v.LayoutOrder
+        }
+        GameData.Dropdowns.Challenge[v.Name] = {
+            Type = "Dropdown",
+            List = GameData.ChallengeList,
+            Multi = true,
+            DropdownTitle = "Select Ignore Challenge",
             LayoutOrder = v.LayoutOrder
         }
         GameData.Dropdowns.Image.Story[v.Name] = {
