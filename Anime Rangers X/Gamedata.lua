@@ -1,4 +1,9 @@
 local GameData = {
+    Code = {
+       "125M Visits",
+        "Im Back",
+        "SorryForIssues",
+    },
     Story = {
         OnePiece = {
             LayoutOrder = 1;
