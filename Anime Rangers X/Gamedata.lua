@@ -185,6 +185,28 @@ local GameData = {
         "Limited Towers",
         "Expensive Upgrades"
     },
+    NextChapter = {
+        --//OnePiece
+        OnePiece_RangerStage1 = "OnePiece_RangerStage2",
+        OnePiece_RangerStage2 = "OnePiece_RangerStage3",
+        OnePiece_RangerStage3 = "Namek_RangerStage1",
+        --//Namek
+        Namek_RangerStage1 = "Namek_RangerStage2",
+        Namek_RangerStage2 = "Namek_RangerStage3",
+        Namek_RangerStage3 = "DemonSlayer_RangerStage1",
+        --//DemonSlayer
+        DemonSlayer_RangerStage1 = "DemonSlayer_RangerStage2",
+        DemonSlayer_RangerStage2 = "DemonSlayer_RangerStage3",
+        DemonSlayer_RangerStage3 = "Naruto_RangerStage1",
+        --//Naruto
+        Naruto_RangerStage1 = "Naruto_RangerStage2",
+        Naruto_RangerStage2 = "Naruto_RangerStage3",
+        Naruto_RangerStage3 = "OPM_RangerStage1",
+        --//OPM
+        OPM_RangerStage1 = "OPM_RangerStage2",
+        OPM_RangerStage2 = "OPM_RangerStage3",
+        OPM_RangerStage3 = ""
+    },
     LevelRequirements = {
         --//OnePiece
         OnePiece_Chapter1 = true,
