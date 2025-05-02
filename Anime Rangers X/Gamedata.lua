@@ -278,6 +278,18 @@ local GameData = {
         OPM_RangerStage1 = "OPM_Chapter10",
         OPM_RangerStage2 = "OPM_Chapter10",
         OPM_RangerStage3 = "OPM_Chapter10"
+    },
+    WebhookImageLink = {
+        --//Game
+        Game = "https://media.discordapp.net/attachments/1367832741508415518/1367836128987582535/Nexavial_ARX.png?ex=6816082a&is=6814b6aa&hm=78d2028287522da88e22b1cb33f35cdc8220168957d4e74de5c9f7b760a3f1e5&=&format=webp&quality=lossless",
+        --//Normal
+        OnePiece = "https://media.discordapp.net/attachments/1367832741508415518/1367833302035337257/Nexavial_Voocha_Village.png?ex=68160588&is=6814b408&hm=b4c877dea9f3d2b4770f221e2913c55a67fb97c9ee7aa474716aef5ca4a21376&=&format=webp&quality=lossless",
+        Namek = "https://media.discordapp.net/attachments/1367832741508415518/1367833302387527831/Nexavial_Green_Planet.png?ex=68160588&is=6814b408&hm=95a5a9af058c50df5c7b0c49c0f9fa4ad3e418808010c62c44ced31f013bf3a3&=&format=webp&quality=lossless",
+        DemonSlayer = "https://media.discordapp.net/attachments/1367832741508415518/1367833302886518805/Nexavial_Demon_Forest.png?ex=68160588&is=6814b408&hm=486f4bfecacf30f9459679d86a71474ace417c218649a7a4f41204ec2d3dcab3&=&format=webp&quality=lossless",
+        Naruto = "https://media.discordapp.net/attachments/1367832741508415518/1367833304073768990/Nexavial_Leaf_Village.png?ex=68160588&is=6814b408&hm=ae7be24ccacb455a6b2c0eda8aecb55bd82b72a38899e10c436aa9da99f2a083&=&format=webp&quality=lossless",
+        OPM = "https://media.discordapp.net/attachments/1367832741508415518/1367833303503212634/Nexavial_Z_City.png?ex=68160588&is=6814b408&hm=4970928ca8010d09378a4a2c690e031f0cd1b5910dbba6605d5cc3f731990941&=&format=webp&quality=lossless",
+        --//Event
+        EasterEgg = "https://media.discordapp.net/attachments/1367832741508415518/1367834629909905458/Nexavial_Easter_Event.png?ex=681606c4&is=6814b544&hm=12bae9e62756080258face4795332a4b70df26367fe20c0715f2197c0737a61d&=&format=webp&quality=lossless&width=550&height=293"
     }
 }
 local H = {
