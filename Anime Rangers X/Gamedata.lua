@@ -1,6 +1,6 @@
 local GameData = {
     Code = {
-       "125M Visits",
+       "CongratsFor1M",
         "Im Back",
         "SorryForIssues",
     },
