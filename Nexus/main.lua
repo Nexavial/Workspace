@@ -42,12 +42,6 @@ local LocalPlayer = Players.LocalPlayer if not LocalPlayer then repeat LocalPlay
 local UGS = UserSettings():GetService'UserGameSettings'
 local OldVolume = UGS.MasterVolume
 
-LocalPlayer.OnTeleport:Connect(function(State)
-    if Nexus.IsConnected then
-        Nexus:Stop() -- Apparently doesn't disconnect websockets on teleport so this has to be here
-    end
-end)
-
 local Signal = {} do
     Signal.__index = Signal
 
