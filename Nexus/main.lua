@@ -43,7 +43,7 @@ local UGS = UserSettings():GetService'UserGameSettings'
 local OldVolume = UGS.MasterVolume
 
 LocalPlayer.OnTeleport:Connect(function(State)
-    if State == Enum.TeleportState.Started and Nexus.IsConnected then
+    if Nexus.IsConnected then
         Nexus:Stop() -- Apparently doesn't disconnect websockets on teleport so this has to be here
     end
 end)
