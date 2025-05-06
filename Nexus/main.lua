@@ -231,7 +231,7 @@ do -- Nexus
 			local Success, Socket
 			repeat
 				Success, Socket = pcall(WSConnect, ('ws://%s/Nexus?name=%s&id=%s&jobId=%s'):format(Host, LocalPlayer.Name, LocalPlayer.UserId, game.JobId))
-				task.wait(2)
+				task.wait(1)
 			until Success
 
             self.Socket = Socket
@@ -248,11 +248,9 @@ do -- Nexus
 
             self.Connected:Fire()
 
-            while self.IsConnected do
-                local Success, Error = pcall(self.Send, self, 'ping')
-
-                if not Success or self.Terminated then
-                    break
+            while self.IsConnected and not self.Terminated do
+                if self.Socket then
+                    local Success, Error = pcall(self.Send, self, 'ping') 
                 end
 
                 task.wait(1)
