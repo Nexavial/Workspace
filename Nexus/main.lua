@@ -223,6 +223,7 @@ do -- Nexus
             self.MessageReceived:Fire(Message)
         end))
         table.insert(self.Connections, self.Socket.OnClose:Connect(function()
+            self.Terminated = true
             self.IsConnected = false
             self.Disconnected:Fire()
         end))
@@ -234,13 +235,12 @@ do -- Nexus
     end
 
     function Nexus:Stop()
-        self.Disconnected:Fire()
-
         if self.Socket then
-            pcall(function() self.Socket:Close() end)
+            repeat
+                pcall(function() self.Socket:Close() end)
+                task.wait(.25)
+            until self.Terminated and not self.IsConnected
         end
-        self.Terminated = true
-        self.IsConnected = false
     end
 
     function Nexus:AddCommand(Name, Function)
