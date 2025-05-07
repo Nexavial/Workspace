@@ -208,15 +208,7 @@ do -- Nexus
             for Index, Connection in pairs(self.Connections) do
                 Connection:Disconnect()
             end
-        
             table.clear(self.Connections)
-
-            if self.IsConnected then
-                self.IsConnected = false
-                self.Socket = nil
-                self.Disconnected:Fire()
-            end
-
             if self.Terminated then break end
 
             if not Host then
@@ -244,9 +236,9 @@ do -- Nexus
 
             while self.IsConnected and not self.Terminated do
                 if self.Socket then
-                    local Success, Error = pcall(self.Send, self, 'ping')
+                    local s = pcall(self.Send, self, 'ping')
+                    if not s then break end
                 end
-
                 task.wait(1)
             end
         end
@@ -255,7 +247,14 @@ do -- Nexus
     function Nexus:Stop()
         if self.Socket then
             pcall(function()
-                self.Socket:Close()
+                local s = pcall(self.Send, self, 'ping')
+                repeat
+                    self.Socket:Close()
+                    if s then
+                       s = pcall(self.Send, self, 'ping')
+                    end
+                    task.wait(.25)
+                until not s
                 self.IsConnected = false
                 self.Terminated = true
                 self.Disconnected:Fire()
