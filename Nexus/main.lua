@@ -203,13 +203,13 @@ do -- Nexus
 
     function Nexus:Connect(Host, Bypass)
         if not Bypass and self.IsConnected then return 'Ignoring connection request, Nexus is already connected' end
+        self.Terminated = false
         self.IsConnected = true
-        while self.IsConnected do
+        while self.IsConnected and not self.Terminated do
             for Index, Connection in pairs(self.Connections) do
                 Connection:Disconnect()
             end
             table.clear(self.Connections)
-            if self.Terminated then break end
 
             if not Host then
                 Host = 'localhost:5242'
@@ -244,17 +244,15 @@ do -- Nexus
     function Nexus:Stop()
         if self.Socket then
             pcall(function()
-                local s = pcall(self.Send, self, 'ping')
                 repeat
                     self.Socket:Close()
-                    if s then
-                       s = pcall(self.Send, self, 'ping')
-                    end
                     task.wait(.25)
-                until not s
-                self.IsConnected = false
+                until not self.IsConnected
                 self.Terminated = true
-                self.Disconnected:Fire()
+                if self.IsConnected then
+                    self.IsConnected = false
+                    self.Disconnected:Fire()
+                end
             end)
         end
     end
