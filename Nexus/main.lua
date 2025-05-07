@@ -82,6 +82,7 @@ do -- Nexus
     Nexus.Commands = {}
     Nexus.Connections = {}
     Nexus.Terminated = false
+    Nexus.OnCloseValue = 0
     Nexus.IsConnected = false
 
     Nexus.ShutdownTime = 45
@@ -225,6 +226,7 @@ do -- Nexus
         table.insert(self.Connections, self.Socket.OnClose:Connect(function()
             self.Terminated = true
             self.IsConnected = false
+            self.OnCloseValue += 1
             self.Disconnected:Fire()
         end))
         self.Connected:Fire()
@@ -237,8 +239,18 @@ do -- Nexus
     function Nexus:Stop()
         if self.Socket then
             repeat
-                pcall(function() self.Socket:Close() end)
-                task.wait(.25)
+                pcall(function()
+                    self.Socket:Close()
+                    if self.OnCloseValue == 0 then
+                        self.Terminated = true
+                        self.IsConnected = false
+                        self.Disconnected:Fire()
+                    end
+                    do
+                        self.OnCloseValue = 0
+                    end
+                end)
+                task.wait(.125)
             until self.Terminated and not self.IsConnected
         end
     end
