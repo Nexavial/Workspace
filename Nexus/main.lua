@@ -230,9 +230,10 @@ do -- Nexus
             self.Disconnected:Fire()
         end))
         self.Connected:Fire()
-        while self.IsConnected and not self.Terminated do
+        while true do
+            if not self.IsConnected then break end
             if self.Socket then pcall(self.Send, self, 'ping') end
-            task.wait(.5)
+            task.wait(1)
         end
     end
 
