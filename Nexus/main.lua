@@ -205,54 +205,42 @@ do -- Nexus
 
     function Nexus:Connect(Host, Bypass)
         if not Bypass and self.IsConnected then return 'Ignoring connection request, Nexus is already connected' end
+        for Index, Connection in pairs(self.Connections) do
+            Connection:Disconnect()
+        end
+        table.clear(self.Connections)
+        if not Host then
+            Host = 'localhost:5242'
+        end
+        local s,sc
+        repeat
+            s, sc = pcall(WSConnect, ('ws://%s/Nexus?name=%s&id=%s&jobId=%s'):format(Host, LocalPlayer.Name, LocalPlayer.UserId, game.JobId))
+            task.wait(.25)
+        until s and sc
+        self.Socket = sc
         self.IsConnected = true
+        table.insert(self.Connections, self.Socket.OnMessage:Connect(function(Message)
+            self.MessageReceived:Fire(Message)
+        end))
+        table.insert(self.Connections, self.Socket.OnClose:Connect(function()
+            self.IsConnected = false
+            self.Disconnected:Fire()
+        end))
+        self.Connected:Fire()
         while self.IsConnected and not self.Terminated do
-            for Index, Connection in pairs(self.Connections) do
-                Connection:Disconnect()
-            end
-            table.clear(self.Connections)
-
-            if not Host then
-                Host = 'localhost:5242'
-            end
-			local Success, Socket
-			repeat
-				Success, Socket = pcall(WSConnect, ('ws://%s/Nexus?name=%s&id=%s&jobId=%s'):format(Host, LocalPlayer.Name, LocalPlayer.UserId, game.JobId))
-				task.wait(1)
-			until Success
-
-            self.Socket = Socket
-            self.IsConnected = true
-
-            table.insert(self.Connections, Socket.OnMessage:Connect(function(Message)
-                self.MessageReceived:Fire(Message)
-            end))
-
-            table.insert(self.Connections, Socket.OnClose:Connect(function()
-                self.IsConnected = false
-                self.Disconnected:Fire()
-            end))
-
-            self.Connected:Fire()
-
-            while self.IsConnected and not self.Terminated do
-                if self.Socket then pcall(self.Send, self, 'ping') end
-                task.wait(1)
-            end
+            if self.Socket then pcall(self.Send, self, 'ping') end
+            task.wait(.5)
         end
     end
 
     function Nexus:Stop()
+        self.Disconnected:Fire()
+
         if self.Socket then
-            pcall(function()
-                self.Socket:Close()
-                self.Terminated = true
-                if self.IsConnected then
-                    self.IsConnected = false
-                    self.Disconnected:Fire()
-                end
-            end)
+            pcall(function() self.Socket:Close() end)
         end
+        self.Terminated = true
+        self.IsConnected = false
     end
 
     function Nexus:AddCommand(Name, Function)
