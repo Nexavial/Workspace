@@ -244,7 +244,7 @@ do -- Nexus
 
             while self.IsConnected and not self.Terminated do
                 if self.Socket then
-                    local Success, Error = pcall(self.Send, self, 'ping') 
+                    local Success, Error = pcall(self.Send, self, 'ping')
                 end
 
                 task.wait(1)
@@ -253,12 +253,13 @@ do -- Nexus
     end
 
     function Nexus:Stop()
-        self.IsConnected = false
-        self.Terminated = true
-        self.Disconnected:Fire()
-
         if self.Socket then
-            pcall(function() self.Socket:Close() end)
+            pcall(function()
+                self.Socket:Close()
+                self.IsConnected = false
+                self.Terminated = true
+                self.Disconnected:Fire()
+            end)
         end
     end
 
