@@ -81,6 +81,8 @@ do -- Nexus
 
     Nexus.Commands = {}
     Nexus.Connections = {}
+    Nexus.Terminated = false
+    Nexus.IsConnected = false
 
     Nexus.ShutdownTime = 45
     Nexus.ShutdownOnTeleportError = true
@@ -203,7 +205,6 @@ do -- Nexus
 
     function Nexus:Connect(Host, Bypass)
         if not Bypass and self.IsConnected then return 'Ignoring connection request, Nexus is already connected' end
-        self.Terminated = false
         self.IsConnected = true
         while self.IsConnected and not self.Terminated do
             for Index, Connection in pairs(self.Connections) do
@@ -244,10 +245,7 @@ do -- Nexus
     function Nexus:Stop()
         if self.Socket then
             pcall(function()
-                repeat
-                    self.Socket:Close()
-                    task.wait(.25)
-                until not self.IsConnected
+                self.Socket:Close()
                 self.Terminated = true
                 if self.IsConnected then
                     self.IsConnected = false
