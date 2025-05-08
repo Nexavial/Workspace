@@ -441,8 +441,12 @@ for i,v in next, GameData.Story do
     H[1][v.Name] = i
 end
 for i,v in next, GameData.UnitRarity do
-    for a,b in next, v do
-        table.insert(GameData.UnitRarity[i], b..":Shiny")
+    local newEntries = {}
+    for a, b in next, v do
+        table.insert(newEntries, b..":Shiny")
+    end
+    for _, newB in ipairs(newEntries) do
+        table.insert(GameData.UnitRarity[i], newB)
     end
 end
 function GameData:ConvertWorld(n)
