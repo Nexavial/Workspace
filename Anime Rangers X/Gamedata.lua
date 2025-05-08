@@ -290,6 +290,145 @@ local GameData = {
         OPM = "https://media.discordapp.net/attachments/1367832741508415518/1367833303503212634/Nexavial_Z_City.png?ex=68160588&is=6814b408&hm=4970928ca8010d09378a4a2c690e031f0cd1b5910dbba6605d5cc3f731990941&=&format=webp&quality=lossless",
         --//Event
         EasterEgg = "https://media.discordapp.net/attachments/1367832741508415518/1367834629909905458/Nexavial_Easter_Event.png?ex=681606c4&is=6814b544&hm=12bae9e62756080258face4795332a4b70df26367fe20c0715f2197c0737a61d&=&format=webp&quality=lossless&width=550&height=293"
+    },
+    UnitRarity = {
+        Rare = {
+            --// DBZ
+            "Chaozi",
+            "Krillin",
+            "Goku",
+            "Vegeta",
+            "Yamcha",
+            --// Dandadan
+            --// DemonSlayer
+            "Nezuko",
+            --// EasterEgg
+            --// FateStayNight
+            --// HxH
+            --// JJK
+            --// JOJO
+            --// Naruto
+            "Naruto",
+            "Sakura",
+            --// OnePunchMan
+            --// Onepiece
+            "Luffy",
+            "Usopp",
+            "Sanji",
+            "Zoro",
+            --// SoloLeveling
+        },
+        Epic = {
+            --// DBZ
+            "MasterRoshi",
+            "Piccolo",
+            --// Dandadan
+            --// DemonSlayer
+            "Tanjiro",
+            --// EasterEgg
+            --// FateStayNight
+            --// HxH
+            "Killua",
+            --// JJK
+            --// JOJO
+            --// Naruto
+            "Sasuke",
+            "Gaara",
+            --// OnePunchMan
+            "Sonic",
+            "Genos",
+            "Mumen Rider",
+            --// Onepiece
+            "Crocodile",
+            --// SoloLeveling
+        },
+        Legendary = {
+            --// DBZ
+            "Goku:Evo",
+            "Piccolo:Evo",
+            --// Dandadan
+            "Okarun",
+            "Okarun:Evo",
+            --// DemonSlayer,
+            "Shinobu",
+            --// EasterEgg
+            "Mai_Sakurajima",
+            --// FateStayNight
+            --// HxH
+            --// JJK
+            --// JOJO
+            "Dio",
+            --// Naruto
+            "Naruto:Evo",
+            "Sasuke:Evo",
+            --// OnePunchMan
+            "Genos:Evo",
+            --// Onepiece
+            "Crocodile:Evo",
+            "Sanji:Evo",
+            "Enel",
+            "BlackBeard",
+            "Kizaru",
+            "Law",
+            "Mihawk",
+            --// SoloLeveling
+        },
+        Mythic = {
+            --// DBZ
+            "Broly",
+            "Broly:Evo",
+            --// Dandadan
+            --// DemonSlayer
+            "Rui",
+            "Zenitsu",
+            "Tanjiro:Evo",
+            --// EasterEgg
+            "Yoshino",
+            --// FateStayNight
+            "Saber",
+            "Saber:Evo",
+            --// HxH
+            --// JJK
+            "Yuji",
+            "Gojo",
+            "Gojo:Evo",
+            "Sukuna",
+            --// JOJO
+            "Dio:Evo",
+            --// Naruto
+            "Itachi",
+            "Itachi:Evo",
+            --// OnePunchMan
+            "Tatsumaki",
+            "TankTopMaster",
+            --// Onepiece
+            "Shanks",
+            "Katakuri",
+            --// SoloLeveling
+            "Songjinwuu",
+            "Songjinwuu:Evo",
+            "Beru",
+        },
+        Secret = {
+            --// DBZ
+            "Gogeta",
+            --// Dandadan
+            --// DemonSlayer
+            --// EasterEgg
+            "Carrot",
+            "Carrot:Evo",
+            --// FateStayNight
+            --// HxH
+            --// JJK
+            --// JOJO
+            --// Naruto
+            "Madara",
+            --// OnePunchMan
+            --// Onepiece
+            "Ace",
+            --// SoloLeveling
+            "Igris",
+        }
     }
 }
 local H = {
@@ -300,6 +439,11 @@ GameData.__index = GameData
 for i,v in next, GameData.Story do
     H[2][i] = v.Name
     H[1][v.Name] = i
+end
+for i,v in next, GameData.UnitRarity do
+    for a,b in next, v do
+        table.insert(GameData.UnitRarity[i], b..":Shiny")
+    end
 end
 function GameData:ConvertWorld(n)
     return H[1][n] or H[2][n] or nil
