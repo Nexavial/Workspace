@@ -448,6 +448,15 @@ end
 function GameData:ConvertWorld(n)
     return H[1][n] or H[2][n] or nil
 end
+function GameData:GetUnitRarity(r)
+    local u = {}
+    for i,v in next, r or {} do
+        for a,b in next, GameData.UnitRarity[v] do
+            table.insert(u, b)
+        end
+    end
+    return u
+end
 function GameData:AdjustYSizeOffset(p, x, y)
     local i = x / y
 	local v = p.AbsoluteSize.X
