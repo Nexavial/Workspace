@@ -5,7 +5,7 @@ local Data = {
                 Boss = {
                     ["Magma Boss"] = {1},
                     ["Smoke Boss"] = {3},
-                    ["White Whale"] = {2,4},
+                    ["White Whale"] = {2,4, Size = Vector3.new(0,7.5,7.5)},
                     ["Lower Moon One"] = {2,4},
                     ["Upper Moons Six"] = {1, Size = Vector3.new(0,35,35)},
                     ["Gaaro Half Beast"] = {3}
