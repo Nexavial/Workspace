@@ -57,6 +57,17 @@ local Data = {
                 LayoutOrder = 6
             }
         },
+        Portal = {
+            TokyoGhoul = {
+                Size = {
+                    X = 1024,
+                    Y = 523
+                },
+                Name = "Ghoul City",
+                Image = "rbxassetid://104837674477520",
+                LayoutOrder = 6
+            }
+        },
         Challenge = {
             "High Cost",
             "Speed Demon",
