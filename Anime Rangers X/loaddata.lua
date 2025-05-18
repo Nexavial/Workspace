@@ -78,6 +78,48 @@ local Data = {
             DemonSlayer = "https://media.discordapp.net/attachments/1367832741508415518/1367833302886518805/Nexavial_Demon_Forest.png?ex=68160588&is=6814b408&hm=486f4bfecacf30f9459679d86a71474ace417c218649a7a4f41204ec2d3dcab3&=&format=webp&quality=lossless"
         }
     },
+    Stats = {
+        List = {
+            "C-",
+            "C",
+            "C+",
+            "B-",
+            "B",
+            "B+",
+            "A-",
+            "A",
+            "A+",
+            "S-",
+            "S",
+            "S+",
+            "SS",
+            "SSS",
+            "O-",
+            "O",
+            "O+"
+        },
+        Image = {
+            ["Damage"] = {
+                Image = "128960075980851",
+                Color = Color3.fromRGB(255,0,0)
+            },
+            ["Health"] = {
+                Image = "132403000977312",
+                Color = Color3.fromRGB(0,255,0)
+            },
+            ["Speed"] = {
+                Image = "131770445081586",
+                Color = Color3.fromRGB(0,255,255)
+            },
+            ["Range"] = {
+                Image = "105399018590765",
+                Color = Color3.fromRGB(255,255,0)
+            },
+            ["AttackCooldown"] = {
+                Image = "102308191455123"
+            }
+        }
+    },
     Trait = {
         List = {
             "Superior",
