@@ -63,6 +63,11 @@ local Data = {
                     X = 1024,
                     Y = 523
                 },
+                List = {
+                    "Portal I",
+                    "Portal II",
+                    "Portal III"
+                },
                 Name = "Ghoul City",
                 Image = "rbxassetid://104837674477520",
                 LayoutOrder = 6
