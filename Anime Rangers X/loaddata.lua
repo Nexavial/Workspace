@@ -78,6 +78,112 @@ local Data = {
             DemonSlayer = "https://media.discordapp.net/attachments/1367832741508415518/1367833302886518805/Nexavial_Demon_Forest.png?ex=68160588&is=6814b408&hm=486f4bfecacf30f9459679d86a71474ace417c218649a7a4f41204ec2d3dcab3&=&format=webp&quality=lossless"
         }
     },
+    Trait = {
+        List = {
+            "Superior",
+            "Horizon",
+            "Endure",
+            "Brute",
+            "Sniper",
+            "Colossal",
+            "Investor",
+            "Jokester",
+            "Blitz",
+            "Juggernaut",
+            "Millionaire",
+            "Violent",
+            "Seraph",
+            "Capitalist",
+            "Duplicator",
+            "Sovereign"
+        },
+        Image = {
+            ["Superior"] = {
+                Image = "rbxassetid://104518913771000",
+                Color = Color3.fromRGB(0,255,255)
+            },
+            ["Horizon"] = {
+                Image = "rbxassetid://109495599964473",
+                Color = Color3.fromRGB(0,255,255)
+            },
+            ["Endure"] = {
+                Image = "rbxassetid://100154935624724",
+                Color = Color3.fromRGB(0,255,255)
+            },
+            ["Brute"] = {
+                Image = "rbxassetid://90029707838959",
+                Color = Color3.fromRGB(128,0,128)
+            },
+            ["Sniper"] = {
+                Image = "rbxassetid://71613162895984",
+                Color = Color3.fromRGB(128,0,128)
+            },
+            ["Colossal"] = {
+                Image = "rbxassetid://121288571076375",
+                Color = Color3.fromRGB(128,0,128)
+            },
+            ["Investor"] = {
+                Image = "rbxassetid://96757267030494",
+                Color = Color3.fromRGB(128,0,128)
+            },
+            ["Jokester"] = {
+                Image = "rbxassetid://132255584788103",
+                Color = Color3.fromRGB(128,0,128)
+            },
+            ["Blitz"] = {
+                Image = "rbxassetid://86155552780780",
+                Color = Color3.fromRGB(255,255,0)
+            },
+            ["Juggernaut"] = {
+                Image = "rbxassetid://112806626432606",
+                Color = Color3.fromRGB(255,255,0)
+            },
+            ["Millionaire"] = {
+                Image = "rbxassetid://97057179636633",
+                Color = Color3.fromRGB(255,255,0)
+            },
+            ["Violent"] = {
+                Image = "rbxassetid://112031146808186",
+                Color = Color3.fromRGB(255,255,0)
+            },
+            ["Seraph"] = {
+                Image = "rbxassetid://114046813870625",
+                Color = true,
+                UIGradient = {
+                    Delay = 0.1,
+                    Color = "Rainbow",
+                    Rotation = -45
+                }
+            },
+            ["Capitalist"] = {
+                Image = "rbxassetid://96422712205949",
+                Color = true,
+                UIGradient = {
+                    Delay = 0.1,
+                    Color = "Rainbow",
+                    Rotation = -45
+                }
+            },
+            ["Duplicator"] = {
+                Image = "rbxassetid://75948916271025",
+                Color = true,
+                UIGradient = {
+                    Delay = 0.1,
+                    Color = "Rainbow",
+                    Rotation = -45
+                }
+            },
+            ["Sovereign"] = {
+                Image = "rbxassetid://93919623325256",
+                Color = true,
+                UIGradient = {
+                    Delay = 0.1,
+                    Color = "Rainbow",
+                    Rotation = -45
+                }
+            }
+        }
+    },
     Next_Levels = {
         OnePiece_Chapter1 = "OnePiece_Chapter2",
         OnePiece_Chapter2 = "OnePiece_Chapter3",
