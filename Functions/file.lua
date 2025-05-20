@@ -75,7 +75,11 @@ end
 function func:listfiles(path, type)
 	assert(typeof(path) == "string", "Unable to concat: " .. tostring(path) .. " not string")
 	local t = {}
-	for i, v in next, listfiles(path) do
+	local b
+	local s = pcall(function()
+		  b = listfiles(path)
+	end);if not s then b = {} end
+	for i, v in next, b do
 		local n = nil
 		if v:sub(1, 1) == "." then
 			n = v:sub(2, #v)
