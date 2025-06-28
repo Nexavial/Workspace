@@ -1,5 +1,5 @@
 if Nexus then Nexus:Stop() end
-
+ 
 if not game:IsLoaded() then
     task.delay(60, function()
         if NoShutdown then return end
